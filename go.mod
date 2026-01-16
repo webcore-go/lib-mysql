@@ -3,8 +3,8 @@ module github.com/webcore-go/lib-mysql
 go 1.24.0
 
 require (
-	github.com/semanggilab/webcore-go v0.1.2
-	github.com/webcore-go/lib-sql v0.1.1
+	github.com/webcore-go/lib-sql v0.1.2
+	github.com/webcore-go/webcore v0.0.1
 	gorm.io/driver/mysql v1.6.0
 )
 
