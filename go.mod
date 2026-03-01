@@ -6,7 +6,7 @@ require (
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/uptrace/bun/dialect/mysqldialect v1.2.16
 	github.com/webcore-go/lib-sql v0.1.12
-	github.com/webcore-go/webcore v0.0.14
+	github.com/webcore-go/webcore v0.0.18
 )
 
 require (

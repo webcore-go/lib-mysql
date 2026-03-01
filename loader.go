@@ -9,6 +9,7 @@ import (
 	"github.com/uptrace/bun/dialect/mysqldialect"
 	libsql "github.com/webcore-go/lib-sql"
 	"github.com/webcore-go/webcore/infra/config"
+	"github.com/webcore-go/webcore/infra/logger"
 	"github.com/webcore-go/webcore/port"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -38,6 +39,7 @@ func (l *MysqlLoader) Init(args ...any) (port.Library, error) {
 	// Set up Bun SQL database wrapper
 	db.SetBunDB(driver, dialect)
 
+	logger.Debug("Attempting to connect to MySQL with", "URI", dsn)
 	err := db.Install(args...)
 	if err != nil {
 		return nil, err
@@ -45,7 +47,7 @@ func (l *MysqlLoader) Init(args ...any) (port.Library, error) {
 
 	db.Connect()
 
-	// l.DB = db
+	logger.Info("Successfully connected to MySQL")
 	return db, nil
 }
 
